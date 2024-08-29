@@ -1,0 +1,42 @@
+{
+	"name": "hackaton-starter-turborepo",
+	"private": true,
+	"keywords": ["turborepo", "biomejs", "bun", "typescript", "tailwindcss"],
+	"author": "Hrihorii Ilin <devopsick@pm.me>",
+	"description": "To install dependencies: bun install",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Frikadellios/hackaton-starter-turborepo.git"
+	},
+	"engines": {
+		"node": ">=20.17.0"
+	},
+	"scripts": {
+		"editorconfig": "editorconfig-checker -exclude \"**/node_modules/**\"",
+		"browserslist": "bunx update-browserslist-db@latest",
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "conc bun:lint:*",
+		"lint:format": "bunx @biomejs/biome format . --write",
+		"lint:fix": "bunx @biomejs/biome check . --fix",
+		"lint:check": "bunx @biomejs/biome check ./* --write --unsafe"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/bun": "latest",
+		"@types/node": "^22.5.1",
+		"@types/web": "^0.0.158",
+		"editorconfig-checker": "^5.1.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"caniuse-lite": "^1.0.30001653",
+		"concurrently": "latest",
+		"turbo": "latest"
+	},
+	"packageManager": "bun@1.1.25",
+	"workspaces": ["apps/*", "packages/*"],
+	"trustedDependencies": ["@biomejs/biome", "esbuild", "sharp"]
+}

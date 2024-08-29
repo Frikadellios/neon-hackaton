@@ -1,0 +1,24 @@
+{
+  "name": "@repo/biome-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "bunx npm-check-updates -ui"
+  },
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@repo/typescript": "workspace:*",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
